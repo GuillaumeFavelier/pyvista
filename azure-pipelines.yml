@@ -43,8 +43,7 @@ jobs:
       pip install $env:PIP_DEPENDENCIES
     condition: eq(variables['TEST_MODE'], 'pip')
     displayName: 'Install dependencies with pip'
-  - script: python setup.py sdist
-    python setup.py install
+  - script: python setup.py develop
     displayName: 'Install vtki dev'
   - script: python -c "import vtki; print(vtki.__version__)"
     displayName: 'Print config'
